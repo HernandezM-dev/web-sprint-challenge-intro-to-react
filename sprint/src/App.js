@@ -4,6 +4,12 @@ import logo from './logo.svg';
 import {BASE_URL, CHARACTER} from './Constants'
 import CharacterSheet from './Components/CharacterSheet'
 import './App.css';
+import styled from 'styled-components'
+
+const StyleHeader = styled.header`
+    /* background-color: red ; */
+    height: 15%;
+`
 
 export default function App() {
 
@@ -12,8 +18,6 @@ const [rmCharacs, setRMCharacs] = useState([])
 useEffect(() =>{
   axios.get(`${BASE_URL}${CHARACTER}`)
     .then(res=>{
-      // console.log(res)
-      // console.log(res.data.results)
       setRMCharacs(res.data.results)
     })
     .catch(err=>{
@@ -23,26 +27,13 @@ useEffect(() =>{
 
 }, [])
 
-
   return (
     <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
-      <h3>List of Characters</h3>
+      <StyleHeader className="App-header">
+        <img src='./assets.Rick_and_Morty_logo.png'/>
+        <h3>List of Characters</h3>
+      </StyleHeader>
       <CharacterSheet characsData={rmCharacs} />
-
     </div>
   );
 }

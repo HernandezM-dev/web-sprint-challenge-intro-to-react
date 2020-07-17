@@ -6,6 +6,10 @@ const StyledSheet = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    background-color: black;
+    background-image: url("https://media.giphy.com/media/LOXGmyPsXPT8VyAuCS/giphy.gif")
+    
+    /* background-image: image('./assets/1062') */
 `
 
 const CharacterSheet = (props) =>{

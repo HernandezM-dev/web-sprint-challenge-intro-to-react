@@ -2,25 +2,31 @@ import React from "react";
 import styled from 'styled-components';
 
 const StyledCard = styled.div`
-    margin: 1%;
-    border-color: green;
+    /* margin: 1%; */
+    border-color: Lime;
     border-style: solid;
-    border-radius: 15%;
+    /* border-radius: 15%; */
+    background-color: black;
+    color: white;
+    
 
     img {
         border-radius: 15%;
+        width: 90%;
+        height: 65%;
+        padding-top: 5%
     }
 `
 const StyledDetails = styled.div`
     display: flex;
-    justify-content: space-between
+    justify-content: space-around
 `
 
 
 const CharacterCard = props =>{
 
     const {cData} = props
-    console.log(cData)
+    /* console.log(cData) */
 
     return(
         <StyledCard className='character-card'>
