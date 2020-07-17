@@ -1,19 +1,26 @@
 import React from "react";
+import CharacterCard from './CharacterCard'
+import styled from 'styled-components';
+
+const StyledSheet = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+`
 
 const CharacterSheet = (props) =>{
     const {characsData} = props
-    console.log(characsData);
+    // console.log(Object.values(characsData));
 
     return(
-        <div className='character-sheet'>
-            <h3>List of Characters</h3>
+        <StyledSheet className='character-sheet'>
             {
-                characsData.map(cData =>{
-                     
-                })
+                characsData.map(cData =>
+                     <CharacterCard cData={cData}/>
+                )
             }
 
-        </div>
+        </StyledSheet>
     )
 }
 

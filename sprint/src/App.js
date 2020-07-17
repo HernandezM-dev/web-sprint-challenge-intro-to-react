@@ -12,7 +12,8 @@ const [rmCharacs, setRMCharacs] = useState([])
 useEffect(() =>{
   axios.get(`${BASE_URL}${CHARACTER}`)
     .then(res=>{
-      console.log(res)
+      // console.log(res)
+      // console.log(res.data.results)
       setRMCharacs(res.data.results)
     })
     .catch(err=>{
@@ -39,7 +40,7 @@ useEffect(() =>{
           Learn React
         </a>
       </header> */}
-
+      <h3>List of Characters</h3>
       <CharacterSheet characsData={rmCharacs} />
 
     </div>
