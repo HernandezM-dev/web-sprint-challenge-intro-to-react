@@ -36,10 +36,10 @@ useEffect(() =>{
     <div className="App">
       <StyleHeader className="App-header">
         <h1>Rick and Morty</h1>
-        
+        <h3>List of Characters</h3>
       </StyleHeader>
-      <h3>List of Characters</h3>
-        <CharacterSheet characsData={rmCharacs} />
-      </div>
+     
+      <CharacterSheet characsData={rmCharacs} />
+    </div>
   );
 }
