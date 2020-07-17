@@ -6,11 +6,16 @@ import CharacterSheet from './Components/CharacterSheet'
 import './App.css';
 import styled from 'styled-components'
 
-const StyleHeader = styled.header`
+const StyleHeader = styled.div`
     /* background-color: red ; */
-    height: 15%;
+    /* height: 15%; */
+    background-color: black;
+    min-height: 0;  
+    h3 {
+      color: white;
+      font-size: 3rem;
+    }
 `
-
 export default function App() {
 
 const [rmCharacs, setRMCharacs] = useState([])
@@ -30,10 +35,11 @@ useEffect(() =>{
   return (
     <div className="App">
       <StyleHeader className="App-header">
-        <img src='./assets.Rick_and_Morty_logo.png'/>
-        <h3>List of Characters</h3>
+        <h1>Rick and Morty</h1>
+        
       </StyleHeader>
-      <CharacterSheet characsData={rmCharacs} />
-    </div>
+      <h3>List of Characters</h3>
+        <CharacterSheet characsData={rmCharacs} />
+      </div>
   );
 }

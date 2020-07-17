@@ -7,7 +7,7 @@ const StyledSheet = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     background-color: black;
-    background-image: url("https://media.giphy.com/media/LOXGmyPsXPT8VyAuCS/giphy.gif")
+    /* background-image: url("https://media.giphy.com/media/LOXGmyPsXPT8VyAuCS/giphy.gif") */
     
     /* background-image: image('./assets/1062') */
 `
@@ -17,7 +17,9 @@ const CharacterSheet = (props) =>{
     // console.log(Object.values(characsData));
 
     return(
+     
         <StyledSheet className='character-sheet'>
+               
             {
                 characsData.map(cData =>
                      <CharacterCard cData={cData}/>
