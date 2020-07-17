@@ -1,17 +1,19 @@
-import React, { useEffect } from 'react';
-import logo from './logo.svg';
+import React, {useState, useEffect } from 'react';
 import axios from 'axios'
-import {BASE_URL} './Constants'
+import logo from './logo.svg';
+import {BASE_URL, CHARACTER} from './Constants'
+import CharacterSheet from './Components/CharacterSheet'
 import './App.css';
 
 export default function App() {
 
-const [rmData, setRMData] = useState([])
+const [rmCharacs, setRMCharacs] = useState([])
+
 useEffect(() =>{
-  axios.get(/*api*/)
+  axios.get(`${BASE_URL}${CHARACTER}`)
     .then(res=>{
-      debugger
-      console.log(res.data)
+      console.log(res)
+      setRMCharacs(res.data.results)
     })
     .catch(err=>{
       console.log(err)
@@ -23,7 +25,7 @@ useEffect(() =>{
 
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -36,9 +38,10 @@ useEffect(() =>{
         >
           Learn React
         </a>
-      </header>
+      </header> */}
+
+      <CharacterSheet characsData={rmCharacs} />
+
     </div>
   );
 }
-
-
